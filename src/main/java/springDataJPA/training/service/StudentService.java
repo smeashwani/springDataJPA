@@ -1,6 +1,7 @@
 package springDataJPA.training.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,7 +35,9 @@ public class StudentService {
 	}
 	
 	public Student findBy(int id) {
-		return studentRepoImpl.findBy(id); 
+		Optional<Student> findById = studentRepo.findById(id);
+		return findById.isPresent()? findById.get() : null;
+		//return studentRepoImpl.findBy(id); 
 	}
 	
 	public List<Student> findByNameLike(String name, Pageable page){
