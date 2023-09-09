@@ -10,7 +10,6 @@ import springDataJPA.training.entity.Course;
 import springDataJPA.training.entity.Student;
 import springDataJPA.training.service.StudentService;
 
-
 public class App {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -33,5 +32,5 @@ public class App {
 		System.out.println("FIND ALL ------------------");
 		System.out.println(stuService.findBy(1));
 		System.out.println(stuService.findByEntityGraph(1));
-	}	
+	}
 }

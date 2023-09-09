@@ -2,21 +2,23 @@ package springDataJPA.training.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedAttributeNode;
-import javax.persistence.NamedEntityGraph;
-import javax.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedAttributeNode;
+import jakarta.persistence.NamedEntityGraph;
+import jakarta.persistence.OneToMany;
 
 @Entity
 @NamedEntityGraph(name="StuWithCourse", attributeNodes = {@NamedAttributeNode("course")} )
 public class Student{
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int id;
+	
 	private String name;
 	private long fees;
 	
@@ -69,7 +71,4 @@ public class Student{
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", fees=" + fees + ", course=" + course+"]";
 	}
-	
-
-	
 }
